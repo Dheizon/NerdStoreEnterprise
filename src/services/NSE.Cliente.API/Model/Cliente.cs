@@ -32,5 +32,5 @@ namespace NSE.Cliente.API.Model
         {
             Endereco = endereco;
         }
-    } 
+    }
 }
