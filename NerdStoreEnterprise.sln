@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{975342FF-683C-4B30-BDA3-26A995C3F703}"
 EndProject
@@ -45,7 +45,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.Pedido.API", "src\servi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A081DA7F-58E4-4590-ABFB-81CD56546AB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSE.WebAPI.Core", "src\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj", "{145AA91E-EFA2-43C8-816B-EB4E3D0BEAF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.WebAPI.Core", "src\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj", "{145AA91E-EFA2-43C8-816B-EB4E3D0BEAF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBus", "MessageBus", "{B4686F69-F786-4FFB-B751-E5F308FC733B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSE.MessageBus", "src\building blocks\NSE.MessageBus\NSE.MessageBus.csproj", "{86C0FC69-6212-40DB-9152-31AB23761F21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +93,10 @@ Global
 		{145AA91E-EFA2-43C8-816B-EB4E3D0BEAF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{145AA91E-EFA2-43C8-816B-EB4E3D0BEAF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{145AA91E-EFA2-43C8-816B-EB4E3D0BEAF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86C0FC69-6212-40DB-9152-31AB23761F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86C0FC69-6212-40DB-9152-31AB23761F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86C0FC69-6212-40DB-9152-31AB23761F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86C0FC69-6212-40DB-9152-31AB23761F21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,8 @@ Global
 		{1E454F56-DC04-473F-9694-BE42B079BE0C} = {A944BC55-BFBD-468F-9249-7F8E56DF0AF3}
 		{A081DA7F-58E4-4590-ABFB-81CD56546AB7} = {F521F675-8660-4FEF-B97F-E24651AD83D3}
 		{145AA91E-EFA2-43C8-816B-EB4E3D0BEAF3} = {A081DA7F-58E4-4590-ABFB-81CD56546AB7}
+		{B4686F69-F786-4FFB-B751-E5F308FC733B} = {F521F675-8660-4FEF-B97F-E24651AD83D3}
+		{86C0FC69-6212-40DB-9152-31AB23761F21} = {B4686F69-F786-4FFB-B751-E5F308FC733B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {183FFD41-F3BF-472F-B13A-77516FBAB683}
