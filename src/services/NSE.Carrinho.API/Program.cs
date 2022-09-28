@@ -16,5 +16,6 @@ namespace NSE.Carrinho.API
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using NSE.Carrinho.API.Model;
 using System.Linq;
 
@@ -6,8 +7,7 @@ namespace NSE.Carrinho.API.Data
 {
     public sealed class CarrinhoContext : DbContext
     {
-        
-        public CarrinhoContext(DbContextOptions<CarrinhoContext> options) 
+        public CarrinhoContext(DbContextOptions<CarrinhoContext> options)
             : base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
@@ -23,6 +23,7 @@ namespace NSE.Carrinho.API.Data
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
                 property.SetColumnType("varchar(100)");
 
+            
             modelBuilder.Entity<CarrinhoCliente>()
                 .HasIndex(c => c.ClienteId)
                 .HasName("IDX_Cliente");
@@ -32,8 +33,20 @@ namespace NSE.Carrinho.API.Data
                 .WithOne(i => i.CarrinhoCliente)
                 .HasForeignKey(c => c.CarrinhoId);
 
-            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
- 
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes()
+                .SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.Cascade;
         }
     }
+
+    public class CarrinhoContextFactory : IDesignTimeDbContextFactory<CarrinhoContext>
+    {
+        public CarrinhoContext CreateDbContext(string[] args)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<CarrinhoContext>();
+            optionsBuilder.UseSqlServer("Server=DESKTOP-QI27J8J\\SQLEXPRESS;Database=NerdStoreEnterprise;Trusted_Connection=True;MultipleActiveResultSets=true");
+
+            return new CarrinhoContext(optionsBuilder.Options);
+        }
+    }
+
 }
